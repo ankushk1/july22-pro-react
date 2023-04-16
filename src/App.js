@@ -6,8 +6,10 @@ import StateComp from "./Components/StateComp";
 import StateComp2 from "./Components/StateComp2";
 import PropsComp from "./Components/PropsComp";
 import ComponentA from "./Components/Context/ComponentA";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import FormComp from "./Components/FormComp";
+import UseEffectComp from "./Components/UseEffectComp";
+import ApiComp from "./Components/ApiComp";
 
 function PrintSome() {
   return <div>Some Random Text</div>;
@@ -15,7 +17,12 @@ function PrintSome() {
 
 export const nameContext = createContext(null);
 
+
 function App() {
+
+  const [mount, setMount] = useState(true)
+
+
   return (
     <div className="App">
       {/* <FirstComp/> */}
@@ -26,7 +33,14 @@ function App() {
         <ComponentA />
       </nameContext.Provider> */}
 
-      <FormComp/>
+      {/* <FormComp/> */}
+      {/* {mount && <UseEffectComp/>}
+
+      <br /><br /><br />
+      <button onClick={() => {
+        setMount(!mount)
+      }}>Mount/Unmount</button> */}
+      <ApiComp/>
     </div>
   );
 }
