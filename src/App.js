@@ -10,6 +10,7 @@ import { createContext, useState } from "react";
 import FormComp from "./Components/FormComp";
 import UseEffectComp from "./Components/UseEffectComp";
 import ApiComp from "./Components/ApiComp";
+import UseReducer from "./Components/UseReducer";
 
 function PrintSome() {
   return <div>Some Random Text</div>;
@@ -40,7 +41,8 @@ function App() {
       <button onClick={() => {
         setMount(!mount)
       }}>Mount/Unmount</button> */}
-      <ApiComp/>
+      {/* <ApiComp/> */}
+      <UseReducer/>
     </div>
   );
 }
