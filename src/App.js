@@ -11,6 +11,10 @@ import FormComp from "./Components/FormComp";
 import UseEffectComp from "./Components/UseEffectComp";
 import ApiComp from "./Components/ApiComp";
 import UseReducer from "./Components/UseReducer";
+import UseMemoHook from "./Components/UseMemoHook";
+import UseCallbackHook from "./Components/UseCallbackHook";
+import Signin from "./Components/Signin";
+import CustomApiCall from "./Components/CustomApiCall";
 
 function PrintSome() {
   return <div>Some Random Text</div>;
@@ -18,11 +22,8 @@ function PrintSome() {
 
 export const nameContext = createContext(null);
 
-
 function App() {
-
-  const [mount, setMount] = useState(true)
-
+  const [mount, setMount] = useState(true);
 
   return (
     <div className="App">
@@ -34,7 +35,10 @@ function App() {
         <ComponentA />
       </nameContext.Provider> */}
 
-      {/* <FormComp/> */}
+      {/* <FormComp/> 
+      <br />
+      <br />
+      <Signin/> */}
       {/* {mount && <UseEffectComp/>}
 
       <br /><br /><br />
@@ -42,7 +46,10 @@ function App() {
         setMount(!mount)
       }}>Mount/Unmount</button> */}
       {/* <ApiComp/> */}
-      <UseReducer/>
+      {/* <UseReducer/> */}
+      {/* <UseMemoHook/> */}
+      {/* <UseCallbackHook /> */}
+      <CustomApiCall/>
     </div>
   );
 }
