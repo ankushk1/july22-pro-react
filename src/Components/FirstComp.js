@@ -9,7 +9,7 @@ const obj = {
   number: 22222
 }
 
-const FirstComp = () => {
+const FirstComp = (props) => {
   return (
     <>
       <div className="innerChild">Some Text {name} and {num}</div>

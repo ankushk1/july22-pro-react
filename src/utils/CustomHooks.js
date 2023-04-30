@@ -24,7 +24,7 @@ export const useFetch = (url, route) => {
 
   useEffect(() => {
     fetchData();
-  }, [url, dataType]);
+  }, [url, route]);
 
   return { apiData };
 };

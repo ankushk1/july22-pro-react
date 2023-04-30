@@ -15,6 +15,11 @@ import UseMemoHook from "./Components/UseMemoHook";
 import UseCallbackHook from "./Components/UseCallbackHook";
 import Signin from "./Components/Signin";
 import CustomApiCall from "./Components/CustomApiCall";
+import CounterComp from "./Components/HOC/CounterComp";
+import HoverComp from "./Components/HOC/HoverComp";
+import Products from "./Components/HOC/Products";
+import Users from "./Components/HOC/Users";
+import Todos from "./Components/HOC/Todos";
 
 function PrintSome() {
   return <div>Some Random Text</div>;
@@ -49,7 +54,12 @@ function App() {
       {/* <UseReducer/> */}
       {/* <UseMemoHook/> */}
       {/* <UseCallbackHook /> */}
-      <CustomApiCall/>
+      {/* <CustomApiCall/> */}
+      {/* <CounterComp message="Message from App.js "/>
+      <HoverComp/> */}
+      <Products/>
+      <Users/>
+      <Todos/>
     </div>
   );
 }
