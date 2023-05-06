@@ -81,6 +81,7 @@ const withApiCall = (PrevComponent, category) => () => {
             </div>
           </div>
         );
+      //4 Case
       default:
         return;
     }

@@ -57,9 +57,9 @@ function App() {
       {/* <CustomApiCall/> */}
       {/* <CounterComp message="Message from App.js "/>
       <HoverComp/> */}
-      <Products/>
+      {/* <Products/>
       <Users/>
-      <Todos/>
+      <Todos/> */}
     </div>
   );
 }
