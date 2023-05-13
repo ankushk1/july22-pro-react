@@ -1,11 +1,11 @@
-* {
+/* * {
   list-style: none;
   text-align: center;
 }
 
 .active {
   background-color: rgb(221, 221, 221);
-  border-radius: 10px;
+  border-radius: 5px;
   color: rgb(255, 108, 108);
 }
 
@@ -13,4 +13,4 @@ a {
   text-decoration: none;
   display: block;
   width: 100px;
-}
+} */

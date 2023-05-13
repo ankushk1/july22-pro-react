@@ -20,6 +20,7 @@ import HoverComp from "./Components/HOC/HoverComp";
 import Products from "./Components/HOC/Products";
 import Users from "./Components/HOC/Users";
 import Todos from "./Components/HOC/Todos";
+import TodoApp from "./Components/TodoApp";
 
 function PrintSome() {
   return <div>Some Random Text</div>;
@@ -60,6 +61,7 @@ function App() {
       {/* <Products/>
       <Users/>
       <Todos/> */}
+      <TodoApp />
     </div>
   );
 }

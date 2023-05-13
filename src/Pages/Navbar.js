@@ -4,15 +4,15 @@ import "./Nav.css";
 
 const Navbar = () => {
   return (
-    <div className=" d-flex flex-column align-items-center mb-5 ">
+    <div className=" d-flex flex-column align-items-center mt-3 mb-5 ">
       <div>
         <NavLink
           // className={({ isActive }) => (isActive ? "active" : "")}
           style={({ isActive }) =>
             isActive
               ? {
-                  backgroundColor: "rgb(221, 221, 221)",
-                  borderRadius: "10px",
+                  backgroundColor: "var(--bs-secondary-bg-subtle)",
+                  borderRadius: "5px",
                   color: "rgb(255, 108, 108)"
                 }
               : {}

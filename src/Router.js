@@ -13,7 +13,7 @@ const Router = () => {
           <Navbar />
           <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup/:userId/:name" element={<Signup />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>
