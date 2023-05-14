@@ -21,6 +21,7 @@ import Products from "./Components/HOC/Products";
 import Users from "./Components/HOC/Users";
 import Todos from "./Components/HOC/Todos";
 import TodoApp from "./Components/TodoApp";
+import CounterRedux from "./Components/CounterRedux";
 
 function PrintSome() {
   return <div>Some Random Text</div>;
@@ -62,6 +63,8 @@ function App() {
       <Users/>
       <Todos/> */}
       <TodoApp />
+
+      <CounterRedux/>
     </div>
   );
 }

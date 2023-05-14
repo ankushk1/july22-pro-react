@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 const TodoApp = () => {
+
+  const stateCount = useSelector((state) => state.counter.count);
+  console.log('state count in Todo app',stateCount);
+
+
   const [input, setInput] = useState("");
   const [todoArr, setTodoArr] = useState([
     {
@@ -12,6 +18,10 @@ const TodoApp = () => {
       text: "Todo 2"
     }
   ]);
+  const [editState, setEditState] = useState({
+    editing: false,
+    id: ""
+  });
 
   const onAddTodosHandler = () => {
     if (!input) return;
@@ -38,10 +48,37 @@ const TodoApp = () => {
     // const filteredArr = todoArr.filter((elem) => elem.id !== id);
     // setTodoArr(filteredArr);
 
-    const todoArrCopy = [...todoArr]
-    const elemIndex = todoArrCopy.findIndex(elem => elem.id === id)
+    const todoArrCopy = [...todoArr];
+    const elemIndex = todoArrCopy.findIndex((elem) => elem.id === id);
     todoArrCopy.splice(elemIndex, 1);
     setTodoArr(todoArrCopy);
+  };
+
+  const onEditHandler = (elem) => {
+    setEditState({
+      editing: true,
+      id: elem.id
+    });
+    setInput(elem.text);
+  };
+
+  const updateTodoHandler = () => {
+    const todoArrCopy = [...todoArr];
+    const elemIndex = todoArrCopy.findIndex((elem) => elem.id === editState.id);
+    //Can also use splice
+    // todoArrCopy.splice(elemIndex, 1, new elem);
+
+    const newElem = {
+      id: editState.id,
+      text: input
+    };
+    todoArrCopy[elemIndex] = newElem;
+    setTodoArr(todoArrCopy);
+    setInput("");
+    setEditState({
+      editing: false,
+      id: ""
+    });
   };
 
   return (
@@ -55,12 +92,21 @@ const TodoApp = () => {
           onChange={(e) => setInput(e.target.value)}
         />
         <div className="col-2">
-          <button
-            className="btn btn-primary"
-            onClick={() => onAddTodosHandler()}
-          >
-            Add Todo
-          </button>
+          {!editState.editing ? (
+            <button
+              className="btn btn-primary"
+              onClick={() => onAddTodosHandler()}
+            >
+              Add Todo
+            </button>
+          ) : (
+            <button
+              className="btn btn-warning"
+              onClick={() => updateTodoHandler()}
+            >
+              Update Todo
+            </button>
+          )}
         </div>
       </div>
 
@@ -72,7 +118,12 @@ const TodoApp = () => {
           >
             <h3 className="offset-1 col-8">{elem.text}</h3>
             <div className="col-3">
-              <button className="btn btn-info me-2">Edit</button>
+              <button
+                className="btn btn-info me-2"
+                onClick={() => onEditHandler(elem)}
+              >
+                Edit
+              </button>
               <button
                 className="btn btn-danger"
                 onClick={() => onDeleteHandler(elem.id)}
